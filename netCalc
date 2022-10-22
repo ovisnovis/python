@@ -1,5 +1,5 @@
 from msilib.schema import Class
-import re 
+import re
 import math
 
 takeInput = "192.168.123.224/25"
@@ -8,21 +8,18 @@ remainderCIDER = int(re.search(r"/([1-3]*[1-9]+)", takeInput).group(1)) % 8
 netMaskClass = math.floor(int(re.search(r"/([1-3]*[1-9]+)", takeInput).group(1)) / 8)
 x = re.findall(r"/([1-3]*[1-9]+)", takeInput)
 
-netClass = {
-	1 : "A",
-	2 : "B",
-	3 : "C",
-	4 : "D"
-}
+netClass = {1: "A", 2: "B", 3: "C", 4: "D"}
 binaryPower = {x: 2**x for x in (1, 2, 3, 4, 5, 6, 7)}
 
 if remainderCIDER in binaryPower:
-	print(binaryPower[remainderCIDER])
+    print(binaryPower[remainderCIDER])
 
 if netMaskClass in netClass:
-	print(netMaskClass)
+    print(netMaskClass)
+
 
 def one():
-	print(x)
+    print(x)
 
-#print basic ip, print possible ips 
+
+# print basic ip, print possible ips
